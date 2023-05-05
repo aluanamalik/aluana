@@ -1,4 +1,4 @@
-import psycopg2  # type: ignore
+import psycopg2  
 import csv
 import re
 
@@ -49,7 +49,7 @@ class AdvancedPostgresWorker(PostgresWorker):
         print("Stored procedure created successfully")
 
     # Call the insert_or_update_user procedure
-    # WARNING: Only works with first name
+    
     def call_insert_or_update_procedure(self, data: tuple):
         self.cursor.callproc('insert_or_update_user', data)
         self.db_connection.commit()
